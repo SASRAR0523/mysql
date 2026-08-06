@@ -1,0 +1,93 @@
+SQL ==>
+
+
+create table students (
+		id INT PRIMARY KEY,
+        Name VARCHAR(30),
+        Age INT,
+        Branch VARCHAR(30),
+        Email VARCHAR(30),
+		city VARCHAR(50)
+);
+
+INSERT INTO students VALUES
+(101,'Naveen',22,'AI','naveen@gmail.com','RAYACHOTY'),
+(102,'Rahul',21,'CSE','rahul@gmail.com','PILER'),
+(103,'Priya',20,'ECE','priya@gmail.com','MPL'),
+(104,'Anitha',22,'IT','anitha@gmail.com','KADIRI'),
+(105,'Kiran',23,'MECH','kiran@gmail.com','RAYACHOTY'),
+(106,'villian',25,'admin','villian@gmail.com','HELL');
+
+
+DESC Employees;
+SELECT * FROM students;
+DROP TABLE students;
+SELECT Name 
+FROM Employees;
+
+DELETE FROM Employees
+WHERE ID IN (101,102,103,104,105);
+
+SELECT * FROM Employees;
+
+select Name,Email
+FROM Employees;
+
+select * from
+Employees
+where Age < 22;
+
+select * from
+Employees
+where Branch = 'AI' ;
+
+SELECT * FROM
+Employees
+WHERE Branch = 'CSE';
+
+SELECT * FROM
+Employees
+where id = '104';
+
+select name
+from Employees;
+
+select * from 
+Employees
+where Email = "priya@gmail.com";
+
+select * from 
+Employees
+where Age >= 22;
+
+
+select * from
+Employees
+where Age != 22;
+
+select * from
+Employees
+where Branch != "IT";
+
+SELECT * FROM
+Employees
+where age between 21 and 23;
+
+select * from 
+Employees
+where id between 102 and 104;
+
+select * from Employees where Branch = "AI" OR 
+Branch = 'ECE';
+
+SELECT * FROM
+Employees
+where Name = "Rahul";
+
+select * from 
+Employees
+where Email like '%gmail.com';
+
+select * from 
+Employees;
+where Name like "%i%";
