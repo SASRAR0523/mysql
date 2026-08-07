@@ -19,63 +19,133 @@ INSERT INTO students VALUES
 (106,'villian',25,'admin','villian@gmail.com','HELL');
 
 
+SELECT name FROM students;
+
+ALTER TABLE students
+ADD email VARCHAR(50);
+
+ALTER TABLE students
+MODIFY email INT;
+
+ALTER TABLE students
+MODIFY email TINYINT;
+
+ALTER TABLE students
+RENAME COLUMN email TO email_id;
+DESC students;
+
+RENAME TABLE students TO student_details;
+DESC student_details;
+
+TRUNCATE TABLE student_details;
+SELECT * FROM student_details;
+
+DROP TABLE student_details;
+SELECT * FROM student_details;
+
+DROP DATABASE college;
+
+UPDATE students
+SET name = "ABDUL",department = "BCA"
+WHERE id = 103
+
+DELETE FROM students
+where id > 0;
+select * FROM students;
+
+SELECT *
+FROM students
+where age >= 22;
+
+
+CREATE USER 'student'@'gmail.com'
+with 'PASSWORD123'
+
+GRANT SELECT, INSERT
+ON college.*
+TO 'student'@'gmail.com';
+
+SHOW GRANTS FOR 'student'@'gmail.com';
+
+REVOKE insert
+ON college.*
+FROM  'student'@'gmail.com';
+
+
+
+
+create table employees (
+		id INT PRIMARY KEY,
+        Name VARCHAR(30),
+        Age INT,
+        Branch VARCHAR(30),
+        Email VARCHAR(30),
+		city VARCHAR(50)
+);
+
+INSERT INTO employees VALUES
+(101,'Naveen',22,'AI','naveen@gmail.com','RAYACHOTY'),
+(102,'Rahul',21,'CSE','rahul@gmail.com','PILER'),
+(103,'Priya',20,'ECE','priya@gmail.com','MPL'),
+(104,'Anitha',22,'IT','anitha@gmail.com','KADIRI'),
+(105,'Kiran',23,'MECH','kiran@gmail.com','RAYACHOTY'),
+(106,'villian',25,'admin','villian@gmail.com','HELL');
+
+
 DESC Employees;
-SELECT * FROM students;
-DROP TABLE students;
+
+SELECT * FROM employees;
+
 SELECT Name 
 FROM Employees;
 
-DELETE FROM Employees
-WHERE ID IN (101,102,103,104,105);
+select Name , Email from employees;
 
-SELECT * FROM Employees;
+select * from employees where Age < 22;
 
-select Name,Email
-FROM Employees;
+select * from employees where Branch = "CSE";
 
-select * from
-Employees
-where Age < 22;
+select * from employees where id = "104";
 
-select * from
-Employees
-where Branch = 'AI' ;
+select Name from employees;
 
-SELECT * FROM
-Employees
-WHERE Branch = 'CSE';
+select Branch from employees;
 
-SELECT * FROM
-Employees
-where id = '104';
+select * from employees where Email="priya@gmail.com";
 
-select name
-from Employees;
+select * from employees where Age >= 22;
 
-select * from 
-Employees
-where Email = "priya@gmail.com";
+select * from employees where Branch != "IT"; 
 
-select * from 
-Employees
-where Age >= 22;
+select * from employees where Age between 21 and 23;
 
+select * from employees where id between 102 and 104;
 
-select * from
-Employees
-where Age != 22;
+select * from employees where Branch = 'AI' or "ECE";
 
-select * from
-Employees
-where Branch != "IT";
+SELECT * FROM employees where Name = "Rahul";
 
-SELECT * FROM
-Employees
-where age between 21 and 23;
+select * from employees where Email = "%.gmail.com";
 
-select * from 
-Employees
-where id between 102 and 104;
+select * from employees order by Age asc;
+
+select * from employees order by Age desc;
+
+select * from employees order by Name;
+
+select * from employees order by Branch;
+
+select * from employees order by Age and Name;
+
+select count(*) from employees ;
+
+select MAX(Age) from employees;
+
+select min(Age) from employees;
+
+select AVG(Age) from employees;
+
+select sum(Age) from employees;
 
 select * from Employees where Branch = "AI" OR 
 Branch = 'ECE';
