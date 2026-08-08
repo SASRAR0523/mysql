@@ -18,7 +18,6 @@ INSERT INTO students VALUES
 (105,'Kiran',23,'MECH','kiran@gmail.com','RAYACHOTY'),
 (106,'villian',25,'admin','villian@gmail.com','HELL');
 
-
 SELECT name FROM students;
 
 ALTER TABLE students
@@ -70,9 +69,6 @@ SHOW GRANTS FOR 'student'@'gmail.com';
 REVOKE insert
 ON college.*
 FROM  'student'@'gmail.com';
-
-
-
 
 create table employees (
 		id INT PRIMARY KEY,
@@ -152,7 +148,9 @@ Branch = 'ECE';
 
 SELECT * FROM
 Employees
-where Name = "Rahul";update employees set city = 'GMD' WHERE id = '106';
+where Name = "Rahul";
+
+update employees set city = 'GMD' WHERE id = '106';
 
 update employees set Age = '20' where id in  (101,102,103,104,105,106);
 
@@ -192,6 +190,99 @@ select * from
 Employees;
 where Name like "%i%";
 
+
+SELECT*from 
+students
+where Age between 23 and 25;
+
+select * from students
+order by Age asc;
+
+select * from students order by Age desc;
+
+select * from students order by Name asc , id asc , Age asc, city asc , Branch desc, Email desc;
+
+select * from employees where Branch = "AI" or 'ECE';
+
+select * from employees where Email like '%gmail.com';
+
+select * from employees where Name like '%A';
+
+select * from employees ;where Name like '%i%';
+
+select count(*) Name from employees;
+
+select max(Age) from employees;
+
+select min(Age) from employees;
+
+select avg(Age) from employees;
+
+update employees
+set Name = 'kiran'
+where id = '106';
+
+select count(Name) from employees where Name = 'kiran';
+
+select Avg(Age)
+from employees
+where Name = 'kiran';
+
+select * from employees order by Name asc, Age desc;
+
+update employees set city = 'GMD' WHERE id = '106';
+
+update employees set Age = '20' where id in  (101,102,103,104,105,106);
+
+select count(Age) from employees where Age = '20';
+
+select * from employees; where Name = 'priya';
+
+update employees set Age = '22' where id = '102';
+
+update employees set Name = 'priya' where id = 106;
+
+update employees set Email = 'priya@gmail.com' where id = '106'; 
+
+select * from employees where Name = 'Naveen';
+
+update employees set Branch = 'CSE' where id = '104';
+
+update employees set Age = Age+1 where Name = 'Naveen';
+
+update employees set Email = 'kiran@gamil.com' where id = 105;
+
+delete from employees where id = '105';
+
+delete from employees where Age = '20';
+
+delete from employees where Branch = 'MECH';
+
+delete from employees where Name = 'Rahul';
+
+delete from employees;
+
+select * from employees;
+
+select * from employees where Name like '%p';
+
+select * from employees where Name like 'n%'; 
+
+select * from employees where Name like '%a%'; 
+
+select * from employees where Email like '%n';
+
+select * from employees where Email like '.com%';
+
+
+select * from employees limit 3;
+
+select * from 
+employees order by Age asc limit 1;
+
+select * from employees order by Age desc limit 1;
+
+select * from employees LIMIT 1 OFFSET 3;
 
 
 
