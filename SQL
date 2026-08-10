@@ -284,6 +284,45 @@ select * from employees order by Age desc limit 1;
 
 select * from employees LIMIT 1 OFFSET 3;
 
+-- create
+
+CREATE TABLE students (
+    student_id INTEGER PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL,
+    department_id INT,
+    department_name TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO students VALUES (101, 'name',1,'CSE');
+INSERT INTO students VALUES (102, 'name2', 2,'ECE');
+INSERT INTO students VALUES (103, 'name', 3,'MCA');
+INSERT INTO students VALUES (104, 'name2', 4,'EEE');
+INSERT INTO students VALUES (106, 'name12', 1,'CSE');
+
+
+DELIMITER //
+CREATE PROCEDURE get_students()
+BEGIN
+  SELECT * FROM students;
+END //
+DELIMITER ;
+
+CALL get_students;
+
+
+DELIMITER //
+CREATE PROCEDURE get_students(
+  IN roll_no VARCHAR(30)
+)
+BEGIN
+  SELECT * FROM students WHERE roll_no = student_id;
+END //
+DELIMITER ;
+
+
+
+
 
 
 
