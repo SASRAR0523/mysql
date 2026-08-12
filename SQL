@@ -320,7 +320,127 @@ BEGIN
 END //
 DELIMITER ;
 
+--creating new table
 
+create table employees(
+	id INT PRIMARY KEY,
+    name VARCHAR(30),
+    age INT,
+    branch VARCHAR(30),
+    salary INT,
+    email VARCHAR(50),
+    city VARCHAR(30)
+);
+
+INSERT INTO employees values
+(001,"ASRAR",22,"MCA",55000,'sasrar0523@gmail.com','RCT'),
+(002,"AFZAL",23,"B.COM",50000,'afzal0123@gmail.com','KCR'),
+(003,"ABRAR",22,"MCA",55970,'abrarrocky@gmail.com','PGNR'),
+(004,"AKRAM",24,"ACD",35000,'sakram256@gmail.com','PDTR'),
+(005,"AKHIL",21,"LTM",55000,'akhildct@gmail.com','MPL'),
+(006,"ABDUL",22,"BBA",45000,'abdulk123@gmail.com','KDR'),
+(007,"AFWAN",24,"B.COM",25000,'afwan79959@gmail.com','RCT'),
+(008,"HASEEB",22,"MBA",54000,'haseeb23@gmail.com','RCT');
+
+
+select * from employees;
+
+select name from employees;
+
+select name , age from employees;
+
+select name,branch,salary from employees;
+
+select * from employees
+where branch = 'IT';
+
+select * from employees
+where age > 25;
+
+select * from employees
+where salary < 50000;
+
+select * from employees
+where age <= 22;
+
+select * from employees
+where city = 'BANGALORE';
+
+SELECT * FROM employees
+where salary = 25000;
+
+select * from employees
+where age = 25 and salary < 25000;
+
+select * from 
+employees where branch IN ('IT','HR');
+
+SELECT * FROM 
+employees where city='BNGLR' AND branch='IT';
+
+SELECT * FROM employees
+where salary between 20000 and 40000;
+
+SELECT * FROM employees
+where age between 20 and 25;
+
+select * from employees
+where city != "BANGALORE";
+
+select * from employees
+where branch != "HR";
+
+select * from employees
+where salary > 20000 and salary < 50000;
+
+select * from employees
+where age < 22 or salary > 40000;
+
+select * from employees
+where city IN ("CHENNAI","HYDERABAD") AND salary > 25000;
+
+select * from employees
+order by age ASC;
+
+select * from employees
+order by age desc;
+
+select * from employees
+order by salary ASC;
+
+select * from employees
+order by salary DESC;
+
+select * from employees
+order by name ASC;
+
+select * from employees
+order by name DESC;
+
+select * from employees
+order by branch ASC;
+
+select * from employees
+order by salary DESC, age ASC; 
+
+select * from employees
+where name like '%A';
+
+select * from employees
+where name like 'n%';
+
+select * from employees
+order by salary desc
+limit 5;
+
+select * from employees
+where name like "%a%";
+
+select * from employees
+where name like '_____';
+
+select * from employees
+where name LIKE '__A%';
 
 
 
