@@ -447,7 +447,7 @@ If the address of a personId is not present in the Address table, report null in
 
 Return the result table in any order.
 
-SQL CODE:- 
+SQL:- 
 
 SELECT 
     p.firstName,
@@ -458,5 +458,12 @@ FROM Person p
 LEFT JOIN Address a
     ON p.personId = a.personId;
 
+Write a solution to find the second highest distinct salary from the Employee table. If there is no second highest salary,
+return null (return None in Pandas).
 
+SQL :- 
+
+SELECT MAX(salary) AS SecondHighestSalary
+FROM Employee
+WHERE salary < (SELECT MAX(salary) FROM Employee);
 
