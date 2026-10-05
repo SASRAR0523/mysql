@@ -496,3 +496,14 @@ JOIN Logs AS l2 ON l2.id = l1.id + 1
 JOIN Logs AS l3 ON l3.id = l1.id + 2
 WHERE l1.num = l2.num
   AND l2.num = l3.num;
+
+Write a solution to report all the duplicate emails. Note that it's guaranteed that the email field is not NULL.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+SELECT email AS Email
+FROM Person
+GROUP BY email
+HAVING COUNT(*) > 1;
