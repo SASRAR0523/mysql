@@ -507,3 +507,22 @@ SELECT email AS Email
 FROM Person
 GROUP BY email
 HAVING COUNT(*) > 1;
+
+Write a solution to find employees who have the highest salary in each of the departments.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+SELECT 
+    d.name AS Department,
+    e.name AS Employee,
+    e.salary AS Salary
+FROM Employee e
+JOIN Department d
+    ON e.departmentId = d.id
+WHERE e.salary = (
+    SELECT MAX(e2.salary)
+    FROM Employee e2
+    WHERE e2.departmentId = e.departmentId
+);
