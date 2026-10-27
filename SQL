@@ -645,3 +645,17 @@ FROM Orders
 GROUP BY customer_number
 ORDER BY COUNT(*) DESC
 LIMIT 1;
+
+
+Write a solution to find managers with at least five direct reports.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+SELECT e.name
+FROM Employee e
+JOIN Employee r
+  ON e.id = r.managerId
+GROUP BY e.id, e.name
+HAVING COUNT(r.id) >= 5;
